@@ -1,0 +1,13 @@
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+button {
+    flex-direction: row-reverse;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #f5222d;
+  }

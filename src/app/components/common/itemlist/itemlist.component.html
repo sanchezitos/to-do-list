@@ -1,0 +1,13 @@
+<nz-card>
+    <div class="content-wrapper">
+      <label nz-checkbox [(ngModel)]="checked">
+        <label>{{ title }}</label>
+      </label>
+      <div style="display: grid;">
+        <span nz-tooltip nzTooltipTitle="Eliminar To-do">
+          <button nz-icon nzType="close" (click)="onDeleteClick()"></button>
+        </span>
+      </div>
+    </div>
+  </nz-card>
+  

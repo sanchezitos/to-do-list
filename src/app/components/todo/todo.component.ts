@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-/* import { XyzComponent } from '../xyz/xyz.component'; */
+
 
 @Component({
   selector: 'app-todo',
@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-/*   xyzComponent: XyzComponent | undefined */
-
+  items = [
+    { title: "Tarea 1" },
+    { title: "Tarea 2" },
+    { title: "Tarea 3" },
+    { title: "Tarea 4" }
+  ];
 }

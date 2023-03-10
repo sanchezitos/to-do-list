@@ -3,28 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { XyzComponent } from './xyz/xyz.component';
+import { FilterselectComponent } from './components/filterselect/filterselect.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
-
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatListModule } from '@angular/material/list';
-
-
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { TodoComponent } from './todo/todo.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+
+
+import { TodoComponent } from './components/todo/todo.component';
+import { ItemlistComponent } from './components/common/itemlist/itemlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    XyzComponent,
-    TodoComponent
+    FilterselectComponent,
+    TodoComponent,
+    ItemlistComponent
   ],
   imports: [
     BrowserModule,
@@ -32,13 +33,13 @@ import { TodoComponent } from './todo/todo.component';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    MatSlideToggleModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatListModule,
     NzButtonModule,
     NzSelectModule,
-    NzCardModule
+    NzCardModule,
+    NzCheckboxModule,
+    NzDividerModule,
+    NzIconModule,
+    NzToolTipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

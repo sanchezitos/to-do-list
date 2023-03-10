@@ -9,10 +9,10 @@ interface Food {
  * @title Basic select
  */
 @Component({
-  selector: 'app-xyz',
-  templateUrl: './xyz.component.html',
-  styleUrls: ['./xyz.component.css']
+  selector: 'app-filterselect',
+  templateUrl: './filterselect.component.html',
+  styleUrls: ['./filterselect.component.css']
 })
-export class XyzComponent {
+export class FilterselectComponent {
   selectedValue: string | undefined;
 }
