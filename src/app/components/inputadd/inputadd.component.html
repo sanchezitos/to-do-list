@@ -1,0 +1,11 @@
+<div>
+    <nz-input-group [nzSuffix]="suffixTemplateInfo" [nzPrefix]="prefixTemplateUser">
+        <input type="text" nz-input placeholder="Agregar tarea" />
+    </nz-input-group>
+    <ng-template #prefixTemplateUser><span nz-icon nzType="user"></span></ng-template>
+    <ng-template #suffixTemplateInfo>
+        <span nz-tooltip nzTooltipTitle="Agregar To-do">
+            <button class="ant-input-search-button" nz-icon nzType="check" nzSize="large"></button>
+        </span>
+    </ng-template>
+</div>
