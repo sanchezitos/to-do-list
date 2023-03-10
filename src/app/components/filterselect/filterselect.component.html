@@ -1,5 +1,3 @@
 <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Seleccione una opción" [(ngModel)]="selectedValue">
-    <nz-option nzLabel="Tarea 1" nzValue="jack"></nz-option>
-    <nz-option nzLabel="Tarea 2" nzValue="lucy"></nz-option>
-    <nz-option nzLabel="Tarea 3" nzValue="tom"></nz-option>
+    <nz-option *ngFor="let item of items" [nzLabel]="item.name" [nzValue]="item.name"></nz-option>
 </nz-select>
