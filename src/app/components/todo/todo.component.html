@@ -1,10 +1,9 @@
 <nz-card style="width:350px; background-color: #f5f5f5;" nzTitle="To do List">
-    <app-filterselect (selectionChanged)="onFilterChanged($event)"></app-filterselect>
-    <br><br>
-    <app-inputadd (itemAdded)="onItemAdded($event)"></app-inputadd>
-<!--     <app-inputadd></app-inputadd> -->
-    <nz-divider></nz-divider>
-    <div *ngFor="let item of filteredItems">
-        <app-itemlist [name]="item.name"></app-itemlist>
-      </div>
+  <app-filterselect [items]="items" (selectionChanged)="onFilterChanged($event)"></app-filterselect>
+  <br><br>
+  <app-inputadd (itemAdded)="onItemAdded($event)"></app-inputadd>
+  <nz-divider></nz-divider>
+  <div *ngFor="let item of filteredItems">
+    <app-itemlist [name]="item.name"></app-itemlist>
+  </div>
 </nz-card>

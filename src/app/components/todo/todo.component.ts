@@ -14,6 +14,7 @@ interface TodoItem {
 export class TodoComponent {
   items: TodoItem[] = [];
   filteredItems: TodoItem[] = [];
+  itemNames: string[] = [];
   filterValue?: string;
 
   constructor(private http: HttpClient) {
@@ -41,6 +42,7 @@ export class TodoComponent {
         const { data } = response ?? {};
         this.items = data ?? [];
         this.filteredItems = this.items;
+        this.itemNames = data.map(item => item.name);
       });
   }
   onItemAdded(newItemName: string) {
