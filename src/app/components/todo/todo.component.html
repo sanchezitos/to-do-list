@@ -4,6 +4,6 @@
   <app-inputadd (itemAdded)="onItemAdded($event)"></app-inputadd>
   <nz-divider></nz-divider>
   <div *ngFor="let item of filteredItems">
-    <app-itemlist [name]="item.name"></app-itemlist>
+    <app-itemlist (itemDeleted)="onItemDeleted($event)" [name]="item.name"></app-itemlist>
   </div>
 </nz-card>

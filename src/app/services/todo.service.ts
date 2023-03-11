@@ -21,8 +21,10 @@ export class ToDoService {
         return this.http.post<any>(addUrl, newItem);
     }
 
-    deleteItem(id: string): Observable<any> {
-        const deleteUrl = `${this.apiUrl}/${id}`;
-        return this.http.delete<any>(deleteUrl);
+    deleteToDo(name: string): Observable<any> {
+        const deleteUrl = `${this.apiUrl}/deletetodo`
+        /*     const deleteUrl = `${this.apiUrl}/${id}`; */
+        const deleteitem = { name: name };
+        return this.http.post<any>(deleteUrl, deleteitem);
     }
 }

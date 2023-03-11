@@ -43,20 +43,14 @@ export class TodoComponent {
       this.filteredItems = this.items;
       this.itemNames = data.map(item => item.name);
     });
-    /*     this.http
-          .get<{ data: TodoItem[] }>(
-            'https://tpmo81rzfa.execute-api.us-east-1.amazonaws.com/dev/node/todo/actions/gettodos'
-          )
-          .subscribe((response) => {
-            console.log('response', response);
-            const { data } = response ?? {};
-            this.items = data ?? [];
-            this.filteredItems = this.items;
-            this.itemNames = data.map(item => item.name);
-          }); */
   }
   onItemAdded(newItemName: string) {
     console.log('Nuevo item agregado:', newItemName);
     this.getToDo();
+  }
+  onItemDeleted(name: string) {
+    console.log("Notificación en to do para actualizar la lista...", name);
+    this.items = this.items.filter(item => item.name !== name);
+    this.filteredItems = this.filteredItems.filter(item => item.name !== name);
   }
 }
