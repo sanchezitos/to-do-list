@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./itemlist.component.css']
 })
 export class ItemlistComponent {
-  @Input() title: string = '';
+  @Input() name: string = '';
   onDeleteClick() {
     // Agregue aquí el código para manejar el evento onDeleteClick
   }
