@@ -43,4 +43,8 @@ export class TodoComponent {
         this.filteredItems = this.items;
       });
   }
+  onItemAdded(newItemName: string) {
+    console.log('Nuevo item agregado:', newItemName);
+    this.getToDo();
+  }
 }

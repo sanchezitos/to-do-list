@@ -5,7 +5,7 @@
     <ng-template #prefixTemplateUser><span nz-icon nzType="user"></span></ng-template>
     <ng-template #suffixTemplateInfo>
         <span nz-tooltip nzTooltipTitle="Agregar To-do">
-            <button class="ant-input-search-button"  [disabled]="form.invalid">
+            <button class="ant-input-search-button"[disabled]="form.controls['name'].invalid">
                 <i nz-icon nzType="check"></i>
             </button>
         </span>

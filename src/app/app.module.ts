@@ -19,6 +19,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+
 
 import { ToDoService } from './services/todo.service';
 
@@ -51,6 +53,7 @@ import { InputaddComponent } from './components/inputadd/inputadd.component';
     NzIconModule,
     NzToolTipModule,
     NzInputModule,
+    NzNotificationModule
 
   ],
   providers: [ToDoService],
