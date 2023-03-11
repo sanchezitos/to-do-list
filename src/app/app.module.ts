@@ -7,6 +7,7 @@ import { FilterselectComponent } from './components/filterselect/filterselect.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -18,6 +19,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzInputModule } from 'ng-zorro-antd/input';
+
+import { ToDoService } from './services/todo.service';
 
 
 import { TodoComponent } from './components/todo/todo.component';
@@ -38,6 +41,7 @@ import { InputaddComponent } from './components/inputadd/inputadd.component';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NzButtonModule,
     NzSelectModule,
@@ -46,9 +50,10 @@ import { InputaddComponent } from './components/inputadd/inputadd.component';
     NzDividerModule,
     NzIconModule,
     NzToolTipModule,
-    NzInputModule
+    NzInputModule,
+
   ],
-  providers: [],
+  providers: [ToDoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

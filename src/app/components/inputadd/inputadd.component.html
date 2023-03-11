@@ -1,11 +1,13 @@
-<div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
     <nz-input-group [nzSuffix]="suffixTemplateInfo" [nzPrefix]="prefixTemplateUser">
-        <input type="text" nz-input placeholder="Agregar tarea" />
+        <input type="text" nz-input formControlName="name" placeholder="Agregar To Do">
     </nz-input-group>
     <ng-template #prefixTemplateUser><span nz-icon nzType="user"></span></ng-template>
     <ng-template #suffixTemplateInfo>
         <span nz-tooltip nzTooltipTitle="Agregar To-do">
-            <button class="ant-input-search-button" nz-icon nzType="check" nzSize="large"></button>
+            <button class="ant-input-search-button"  [disabled]="form.invalid">
+                <i nz-icon nzType="check"></i>
+            </button>
         </span>
     </ng-template>
-</div>
+</form>
