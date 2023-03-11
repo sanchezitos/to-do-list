@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ToDoService } from 'src/app/services/todo.service';
 
 interface TodoItem {
   name: string;
   completed: boolean;
 }
-
+interface TodoResponse {
+  data: TodoItem[];
+}
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -17,7 +20,7 @@ export class TodoComponent {
   itemNames: string[] = [];
   filterValue?: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private toDoService: ToDoService) {
     this.getToDo();
   }
 
@@ -33,17 +36,24 @@ export class TodoComponent {
   }
 
   private getToDo() {
-    this.http
-      .get<{ data: TodoItem[] }>(
-        'https://tpmo81rzfa.execute-api.us-east-1.amazonaws.com/dev/node/todo/actions/gettodos'
-      )
-      .subscribe((response) => {
-        console.log('response', response);
-        const { data } = response ?? {};
-        this.items = data ?? [];
-        this.filteredItems = this.items;
-        this.itemNames = data.map(item => item.name);
-      });
+    this.toDoService.getToDo().subscribe((response: TodoResponse) => {
+      console.log('response', response);
+      const { data } = response ?? {};
+      this.items = data ?? [];
+      this.filteredItems = this.items;
+      this.itemNames = data.map(item => item.name);
+    });
+    /*     this.http
+          .get<{ data: TodoItem[] }>(
+            'https://tpmo81rzfa.execute-api.us-east-1.amazonaws.com/dev/node/todo/actions/gettodos'
+          )
+          .subscribe((response) => {
+            console.log('response', response);
+            const { data } = response ?? {};
+            this.items = data ?? [];
+            this.filteredItems = this.items;
+            this.itemNames = data.map(item => item.name);
+          }); */
   }
   onItemAdded(newItemName: string) {
     console.log('Nuevo item agregado:', newItemName);

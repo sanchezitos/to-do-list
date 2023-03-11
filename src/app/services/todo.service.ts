@@ -10,8 +10,9 @@ export class ToDoService {
 
     constructor(private http: HttpClient) { }
 
-    getItems(): Observable<any[]> {
-        return this.http.get<any[]>(this.apiUrl);
+    getToDo(): Observable<any> {
+        const getURL = `${this.apiUrl}/gettodos`
+        return this.http.get<any>(getURL);
     }
 
     addToDo(name: string): Observable<any> {
